@@ -4,6 +4,12 @@
 
 <style>
     header {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        z-index: 10;
+
         display: flex;
         align-items: center;
 
@@ -13,6 +19,11 @@
         box-sizing: border-box;
         padding: 0 20px;
 
-        background-color: red;
+        background-color: white;
+        color: black;
+    }
+
+    h1 {
+        color: inherit;
     }
 </style>
