@@ -6,36 +6,31 @@
 			title: 'Our Story',
 			paragraph:
 				'StarBourn Studios Is A Media Company That Offers 360-Degree Media Solutions We Produce Content For TV Shows, Films, Digital And Offer Unique Brand Solutions',
-			image: '2',
-			align: 'left',
+			image: '1-min',
 		},
 		{
 			title: 'Development \n& Production',
 			paragraph:
 				'TV Formats\nFactual/ Non-Scripted\nFeature Films\nShort Films\nDocumentary\nDigital - OTT',
-			image: '3',
-			align: 'right',
+			image: '2-min',
 		},
 		{
 			title: 'Discover Us',
 			paragraph:
 				'Content Creation\nVideo Production\nPost Production\nCommercial\nCorporate\nPrint & Digital',
-			image: '4',
-			align: 'left',
+			image: '3-min',
 		},
 		{
 			title: 'Imagine Beyond',
 			paragraph:
 				'Creative - Ideation & Planning\nContent Production & Creation\nDistribution & Marketing',
-			image: '5',
-			align: 'right',
+			image: '4-min',
 		},
 		{
 			title: 'Branding',
 			paragraph:
-				'We Provide Entertainment Marketing\nServices To Forward Thinking Brands',
-			image: '6',
-			align: 'left',
+				'We Provide Entertainment Marketing Services To Forward Thinking Brands',
+			image: '5-min',
 		},
 	];
 </script>
@@ -59,9 +54,14 @@
 	</video> -->
 
 	{#each sections as section}
+		<!-- <div
+			class="section"
+			style="background-image: url(assets/resized-super-compressed/{section.image}.jpg);"
+		> -->
+
 		<div
-			class="section {section.align}"
-			style="background-image: url(assets/{section.image}.jpg);"
+			class="section"
+			style="background-image: url(assets/resized-compressed-image/{section.image}.jpg);"
 		>
 			<div>
 				<h1>{section.title}</h1>
