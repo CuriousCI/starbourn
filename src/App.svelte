@@ -1,30 +1,61 @@
 <script>
-	export let name;
+	import Header from './Header.svelte';
+	import Section from './Section.svelte';
+
+	const sections = [
+		{
+			title: 'Our Story',
+			paragraph:
+				'StarBourn Studios Is A Media Company That Offers 360-Degree Media Solutions We Produce Content For TV Shows, Films, Digital And Offer Unique Brand Solutions',
+			image: '',
+		},
+		{
+			title: 'Development \n& Production',
+			paragraph:
+				'TV Formats\nFactual/ Non-Scripted\nFeature Films\nShort Films\nDocumentary\nDigital - OTT',
+			image: '',
+		},
+		{
+			title: 'Discover Us',
+			paragraph:
+				'Content Creation\nVideo Production\nPost Production\nCommercial\nCorporate\nPrint & Digital',
+			image: '',
+		},
+		{
+			title: 'Imagine Beyond',
+			paragraph:
+				'Creative - Ideation & Planning\nContent Production & Creation\nDistribution & Marketing',
+			image: '',
+		},
+		{
+			title: 'Branding',
+			paragraph:
+				'We Provide Entertainment Marketing Services To Forward Thinking Brands',
+			image: '',
+		},
+	];
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<Header />
+	{#each sections as section}
+		<div class="section">
+			<h1>{section.title}</h1>
+			<p>{section.paragraph}</p>
+			<img src="assets/{section.image}.jpg" alt="background" />
+		</div>
+	{/each}
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+	.section {
+		position: relative;
+		width: 100%;
+		height: 100vh;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+	h1,
+	p {
+		white-space: pre-line;
 	}
 </style>
