@@ -9,7 +9,7 @@
 			title: 'Our Story',
 			paragraph:
 				'StarBourn Studios Is A Media Company That\nOffers 360-Degree Media Solutions\nWe Produce Content For TV Shows, Films,\nDigital And Offer Unique Brand Solutions',
-			image: '2-min',
+			image: '2',
 			align: 'left',
 		},
 		{
@@ -93,7 +93,7 @@
 	{#each sections as section}
 		<div
 			id={section.title}
-			class="window cover section {section.align}"
+			class="window cover section"
 			style="background-image: url(assets/compressed/{section.image}.jpg);"
 		>
 			<div>
@@ -103,7 +103,13 @@
 		</div>
 	{/each}
 
-	<Contact />
+	<div id="Get in Touch" class="window cover contacts">
+		<div class="t">
+			<h1>Get in Touch</h1>
+			<p>Let the magic begin</p>
+		</div>
+		<Contact />
+	</div>
 
 	<footer>
 		<p>footer</p>
@@ -111,9 +117,17 @@
 </main>
 
 <style>
+	.t {
+		display: grid;
+		place-items: center;
+	}
 	.contacts {
+		background-image: url('../assets/images/7.jpg');
+
 		display: flex;
 		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
 	}
 
 	.home {
