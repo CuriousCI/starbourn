@@ -1,4 +1,8 @@
-<header>
+<script>
+    export let test;
+</script>
+
+<header class={test ? 'black' : 'white'}>
     <h1>STARBOURN STUDIOS</h1>
 </header>
 
@@ -18,7 +22,14 @@
 
         box-sizing: border-box;
         padding: 0 20px;
+    }
 
+    .black {
+        background-color: unset;
+        color: white;
+    }
+
+    .white {
         background-color: white;
         color: black;
     }
