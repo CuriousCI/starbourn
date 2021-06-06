@@ -3,7 +3,7 @@ html, body {
 	width: 100%;
 	height: 100%;
 
-	scroll-snap-type: y mandatory;
+	scroll-snap-type: y proximity;
 }
 
 body { 
@@ -21,8 +21,21 @@ body {
 	width: 100%;
 	height: 100vh;
 	
+	box-sizing: border-box;
+	padding-top: 100px;
+
 	scroll-snap-align: start;
 }
+
+.window h1 {
+	font-size: 8vw;
+}
+
+.window p {
+	font-size: 2vw;
+}
+
+
 
 .cover {
 	background-position: center;

@@ -7,7 +7,7 @@
 		{
 			title: 'Our Story',
 			paragraph:
-				'StarBourn Studios Is A Media Company That Offers 360-Degree Media Solutions We Produce Content For TV Shows, Films, Digital And Offer Unique Brand Solutions',
+				'StarBourn Studios Is A Media Company That\nOffers 360-Degree Media Solutions\nWe Produce Content For TV Shows, Films,\nDigital And Offer Unique Brand Solutions',
 			image: '2-min',
 			align: 'left',
 		},
@@ -88,11 +88,11 @@
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 		allowfullscreen
 	/>
-
+	<!-- {section.align} -->
 	{#each sections as section}
 		<div
 			id={section.title}
-			class="window cover section {section.align}"
+			class="window cover section "
 			style="background-image: url(assets/resized-compressed-image/{section.image}.jpg);"
 		>
 			<div>
@@ -141,7 +141,6 @@
 		align-items: center;
 		justify-content: space-around;
 	}
-
 	.left {
 		justify-content: flex-start;
 	}
@@ -157,17 +156,24 @@
 		padding: 0 200px;
 	}
 
+	@media screen and (max-width: 800px) {
+		.section {
+			padding: unset;
+			padding-bottom: 100px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			align-items: center;
+		}
+	}
+
 	.title {
-		text-align: center;
+		/* text-align: center; */
 	}
 
-	h1 {
-		font-size: 100px;
-	}
-
-	p {
+	/* p {
 		font-size: 27px;
-	}
+	} */
 
 	h1,
 	p {
