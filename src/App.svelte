@@ -1,5 +1,3 @@
-<svelte:options />
-
 <script>
 	import Header from './Header.svelte';
 	import Contact from './Contact.svelte';
@@ -36,7 +34,7 @@
 		{
 			title: 'Branding',
 			paragraph:
-				'We Provide Entertainment Marketing Services To Forward Thinking Brands',
+				'We Provide Entertainment Marketing\nServices To Forward Thinking Brands',
 			image: '8',
 			align: 'left',
 		},
@@ -58,7 +56,7 @@
 		bind:menu
 		menus={[
 			'Home',
-			'Starbourn',
+			'',
 			...sections.map((section) => section.title),
 			'Get in Touch',
 		]}
@@ -89,7 +87,6 @@
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 		allowfullscreen
 	/>
-	<!-- {section.align} -->
 	{#each sections as section}
 		<div
 			id={section.title}
@@ -112,11 +109,28 @@
 	</div>
 
 	<footer>
-		<p>footer</p>
+		<p>Copyright @2021 The Story Lab, a dentsu company</p>
+		<div>
+			<a>Privacy policy</a> |
+			<a>Terms & conditions</a> |
+			<a>Cookies</a> |
+			<a>Contact us</a> |
+			<a>About us</a> |
+			<a>Sitemap</a> |
+		</div>
 	</footer>
 </main>
 
 <style>
+	footer {
+		background-color: #222222;
+		height: 80px;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: flex-start;
+	}
 	.t {
 		display: grid;
 		place-items: center;
@@ -148,6 +162,7 @@
 	.section {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		box-sizing: border-box;
 		padding: 0 200px;
 	}
@@ -155,24 +170,12 @@
 	@media screen and (max-width: 800px) {
 		.section {
 			padding: unset;
-			padding-bottom: 100px;
+			padding-bottom: 50px;
+
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-end;
 			align-items: center;
 		}
-	}
-
-	.title {
-		/* text-align: center; */
-	}
-
-	/* p {
-		font-size: 27px;
-	} */
-
-	h1,
-	p {
-		white-space: pre-line;
 	}
 </style>

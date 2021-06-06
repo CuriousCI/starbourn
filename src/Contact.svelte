@@ -12,11 +12,12 @@
 
 <style>
 	form {
-		padding: 10px;
+		padding: 20px;
 		display: flex;
 		flex-direction: column;
+		gap: 5px;
 		align-items: center;
-		width: 40%;
+		width: clamp(300px, 40%, 1000px);
 		background-color: #ededed;
 		border-radius: 4px;
 	}
@@ -31,7 +32,8 @@
 
 	input,
 	textarea {
-		margin: 0 2px;
+		padding: 5px;
+		/* margin: 0 5px; */
 		width: 100%;
 		justify-content: center;
 		resize: none;

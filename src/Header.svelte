@@ -33,6 +33,12 @@
         padding: 0 20px;
     }
 
+    @media screen and (max-width: 800px) {
+        header {
+            display: none;
+        }
+    }
+
     nav {
         display: flex;
         align-items: center;
@@ -58,6 +64,6 @@
         text-decoration: unset;
 
         font-weight: bolder;
-        font-size: 20px;
+        font-size: 1.2vw;
     }
 </style>

@@ -27,20 +27,33 @@ body {
 	scroll-snap-align: start;
 }
 
+h1,
+p {
+	white-space: pre-line;
+	/* width: max-content; */
+}
+
 .window h1 {
-	font-size: 8vw;
+	font-size: 9vw;
+	font-weight: normal;
 }
 
 .window p {
-	font-size: 2vw;
+	font-size: 2.1vw;
 }
-
 
 
 .cover {
 	background-position: center;
 	background-size: cover;
+	background-repeat: no-repeat;
 }
+
+@media screen and (max-width: 480px) {
+	.window h1 { font-size: 12vw; }
+	.window p { font-size: 4vw; }
+}
+
 
 .pointer { cursor: pointer; }
 
