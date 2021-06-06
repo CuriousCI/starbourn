@@ -1,3 +1,5 @@
+<svelte:options />
+
 <script>
 	import Header from './Header.svelte';
 
@@ -10,7 +12,7 @@
 			align: 'left',
 		},
 		{
-			title: 'Development \n& Production',
+			title: 'Development & Production',
 			paragraph:
 				'TV Formats\nFactual/ Non-Scripted\nFeature Films\nShort Films\nDocumentary\nDigital - OTT',
 			image: '3-min',
@@ -39,23 +41,34 @@
 		},
 	];
 
-	let test = true;
+	let scrolling = false;
 	let y;
+	let menu;
 
-	$: test = y <= 50;
+	$: scrolling = y >= 50;
 </script>
 
-<svelte:window bind:scrollY={y} />
+<svelte:window bind:scrollY={y} style="scroll-behavior: smooth;" />
+
 <main>
-	<Header bind:test />
+	<Header
+		bind:scrolling
+		bind:menu
+		menus={[
+			'Home',
+			...sections.map((section) => section.title),
+			'Get in Touch',
+		]}
+	/>
 
 	<div
-		class="home"
+		id="Home"
+		class="window cover home"
 		style="background-image: url(assets/resized-compressed-image/1-min.jpg);"
 	>
-		<h1>
-			We bring ideas to life! Stories to entertain the audience around the
-			world
+		<h1 class="title">
+			We bring ideas to life!<br />Stories to entertain<br />the audience
+			around the world
 		</h1>
 
 		<h4>
@@ -65,6 +78,7 @@
 	</div>
 	<!-- &autoplay=1 -->
 	<iframe
+		class="window"
 		src="https://www.youtube.com/embed/F5UPc8dya-M?controls=0"
 		title="YouTube video player"
 		frameborder="0"
@@ -74,7 +88,8 @@
 
 	{#each sections as section}
 		<div
-			class="section {section.align}"
+			id={section.title}
+			class="window cover section {section.align}"
 			style="background-image: url(assets/resized-compressed-image/{section.image}.jpg);"
 		>
 			<div>
@@ -84,10 +99,10 @@
 		</div>
 	{/each}
 
-	<div class="contacts">
+	<div id="Get in Touch" class="window contacts">
 		<h1>Get in Touch</h1>
 		<p>Let the magic begin</p>
-		<form>
+		<form on:submit|preventDefault>
 			<input type="text" placeholder="Name" />
 			<input type="text" placeholder="Phone Number" />
 			<input type="mail" placeholder="Email" />
@@ -111,29 +126,17 @@
 		flex-direction: column;
 		width: 40%;
 	}
+
 	.contacts {
-		position: relative;
-		width: 100%;
-		height: 100vh;
 		display: flex;
 		flex-direction: column;
 	}
 
 	.home {
-		position: relative;
-		width: 100%;
-		height: 100vh;
-
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-around;
-	}
-
-	iframe {
-		position: relative;
-		width: 100%;
-		height: 100vh;
 	}
 
 	.left {
@@ -145,17 +148,14 @@
 	}
 
 	.section {
-		position: relative;
-		width: 100%;
-		height: 100vh;
-
 		display: flex;
 		align-items: center;
 		box-sizing: border-box;
 		padding: 0 200px;
+	}
 
-		background-position: center;
-		background-size: cover;
+	.title {
+		text-align: center;
 	}
 
 	h1 {
