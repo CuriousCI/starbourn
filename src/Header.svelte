@@ -1,25 +1,19 @@
 <script>
-    export let scrolling,
-        menus,
-        menu = 'Home';
+    export let scrolling, menus;
+    let menu = 'Home';
 </script>
 
-<header class={scrolling ? 'invert' : ''}>
+<header class:invert={scrolling}>
     <h1>STARBOURN STUDIOS</h1>
     <nav>
         {#each menus as section}
             <a
-                class="pointer {menu == section ? 'selected' : ''}"
+                class:selected={menu == section}
                 href="#{section}"
-            >
-                {section}
-            </a>
-            <!-- <span
-                class="pointer {menu == section ? 'selected' : ''}"
                 on:click={() => (menu = section)}
             >
                 {section}
-            </span> -->
+            </a>
         {/each}
     </nav>
 </header>
@@ -52,14 +46,9 @@
     .invert {
         background-color: white;
         color: black;
-        border-color: black;
     }
 
     .selected {
-        border-bottom: 2px solid inherit;
-    }
-
-    a {
-        color: inherit;
+        color: red;
     }
 </style>

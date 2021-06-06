@@ -43,7 +43,6 @@
 
 	let scrolling = false;
 	let y;
-	let menu;
 
 	$: scrolling = y >= 50;
 </script>
@@ -53,7 +52,6 @@
 <main>
 	<Header
 		bind:scrolling
-		bind:menu
 		menus={[
 			'Home',
 			...sections.map((section) => section.title),
