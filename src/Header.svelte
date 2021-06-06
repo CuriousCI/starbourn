@@ -1,6 +1,5 @@
 <script>
-    export let scrolling, menus;
-    let menu = 'Home';
+    export let scrolling, menus, menu;
 </script>
 
 <header class:invert={scrolling}>
@@ -8,7 +7,7 @@
     <nav>
         {#each menus as section}
             <a
-                class:selected={menu == section}
+                class:selected={menus[menu] == section}
                 href="#{section}"
                 on:click={() => (menu = section)}
             >
@@ -40,7 +39,6 @@
         justify-content: space-evenly;
 
         box-sizing: border-box;
-        padding: 0 100px;
     }
 
     .invert {
@@ -49,6 +47,17 @@
     }
 
     .selected {
-        color: red;
+        border-bottom: 2px solid;
+        border-color: inherit;
+    }
+
+    a {
+        height: 100%;
+
+        color: inherit;
+        text-decoration: unset;
+
+        font-weight: bolder;
+        font-size: 20px;
     }
 </style>

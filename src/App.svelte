@@ -44,17 +44,21 @@
 
 	let scrolling = false;
 	let y;
+	let menu;
 
 	$: scrolling = y >= 50;
+	$: menu = Math.floor(y / window.innerHeight);
 </script>
 
-<svelte:window bind:scrollY={y} style="scroll-behavior: smooth;" />
+<svelte:window bind:scrollY={y} />
 
 <main>
 	<Header
 		bind:scrolling
+		bind:menu
 		menus={[
 			'Home',
+			'Starbourn',
 			...sections.map((section) => section.title),
 			'Get in Touch',
 		]}
@@ -75,8 +79,9 @@
 			today." --Robert McKee
 		</h4>
 	</div>
-	<!-- &autoplay=1 -->
+
 	<iframe
+		id="Starbourn"
 		class="window"
 		src="https://www.youtube.com/embed/F5UPc8dya-M?controls=0"
 		title="YouTube video player"
