@@ -2,41 +2,42 @@
 
 <script>
 	import Header from './Header.svelte';
+	import Contact from './Contact.svelte';
 
 	const sections = [
 		{
 			title: 'Our Story',
 			paragraph:
 				'StarBourn Studios Is A Media Company That Offers 360-Degree Media Solutions We Produce Content For TV Shows, Films, Digital And Offer Unique Brand Solutions',
-			image: '2-min',
+			image: '2',
 			align: 'left',
 		},
 		{
 			title: 'Development & Production',
 			paragraph:
 				'TV Formats\nFactual/ Non-Scripted\nFeature Films\nShort Films\nDocumentary\nDigital - OTT',
-			image: '3-min',
+			image: '3',
 			align: 'right',
 		},
 		{
 			title: 'Discover Us',
 			paragraph:
 				'Content Creation\nVideo Production\nPost Production\nCommercial\nCorporate\nPrint & Digital',
-			image: '4-min',
+			image: '4',
 			align: 'left',
 		},
 		{
 			title: 'Imagine Beyond',
 			paragraph:
 				'Creative - Ideation & Planning\nContent Production & Creation\nDistribution & Marketing',
-			image: '5-min',
+			image: '5',
 			align: 'right',
 		},
 		{
 			title: 'Branding',
 			paragraph:
 				'We Provide Entertainment Marketing Services To Forward Thinking Brands',
-			image: '8-min',
+			image: '8',
 			align: 'left',
 		},
 	];
@@ -62,7 +63,7 @@
 	<div
 		id="Home"
 		class="window cover home"
-		style="background-image: url(assets/resized-compressed-image/1-min.jpg);"
+		style="background-image: url(assets/compressed/1.jpg);"
 	>
 		<h1 class="title">
 			We bring ideas to life!<br />Stories to entertain<br />the audience
@@ -88,7 +89,7 @@
 		<div
 			id={section.title}
 			class="window cover section {section.align}"
-			style="background-image: url(assets/resized-compressed-image/{section.image}.jpg);"
+			style="background-image: url(assets/compressed/{section.image}.jpg);"
 		>
 			<div>
 				<h1>{section.title}</h1>
@@ -97,21 +98,8 @@
 		</div>
 	{/each}
 
-	<div id="Get in Touch" class="window contacts">
-		<h1>Get in Touch</h1>
-		<p>Let the magic begin</p>
-		<form on:submit|preventDefault>
-			<input type="text" placeholder="Name" />
-			<input type="text" placeholder="Phone Number" />
-			<input type="mail" placeholder="Email" />
-			<textarea
-				placeholder="Type your message here"
-				cols="30"
-				rows="10"
-			/>
-			<input type="submit" />
-		</form>
-	</div>
+	<Contact>
+	</Contact>
 
 	<footer>
 		<p>footer</p>
@@ -119,11 +107,6 @@
 </main>
 
 <style>
-	form {
-		display: flex;
-		flex-direction: column;
-		width: 40%;
-	}
 
 	.contacts {
 		display: flex;
@@ -135,6 +118,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-around;
+		background-color: white;
 	}
 
 	.left {
