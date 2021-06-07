@@ -46,4 +46,15 @@
     .title p {
         text-align: center;
     }
+
+    @media (min-width: 992px) {
+        .window {
+            background-position-y: 0;
+            align-items: center;
+        }
+
+        .content {
+            background: unset;
+        }
+    }
 </style>
