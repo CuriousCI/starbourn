@@ -1,5 +1,8 @@
 <script>
-    export let scrolling, menus, menu;
+    export let scrollY, menus;
+
+    $: scrolling = scrollY >= 50;
+    $: menu = menus[Math.floor(scrollY / window.innerHeight)];
 </script>
 
 <header class:invert={scrolling}>
@@ -7,7 +10,7 @@
     <nav>
         {#each menus as section}
             <a
-                class:selected={menus[menu] == section}
+                class:selected={menu == section}
                 href="#{section}"
                 on:click={() => (menu = section)}
             >
@@ -33,7 +36,7 @@
         padding: 0 20px;
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 992px) {
         header {
             display: none;
         }

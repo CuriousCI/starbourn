@@ -18,6 +18,7 @@
 		gap: 5px;
 		align-items: center;
 		width: clamp(300px, 40%, 1000px);
+		height: 30vh;
 		background-color: #ededed;
 		border-radius: 4px;
 	}

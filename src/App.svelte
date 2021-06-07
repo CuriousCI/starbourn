@@ -1,181 +1,42 @@
 <script>
 	import Header from './Header.svelte';
-	import Contact from './Contact.svelte';
+	import Home from './sections/Home.svelte';
+	import Storylab from './sections/Storylab.svelte';
+	import Story from './sections/Story.svelte';
+	import Development from './sections/Development.svelte';
+	import Discover from './sections/Discover.svelte';
+	import Beyond from './sections/Beyond.svelte';
+	import Branding from './sections/Branding.svelte';
+	import Footer from './Footer.svelte';
+	import Contacts from './sections/Contacts.svelte';
 
-	const sections = [
-		{
-			title: 'Our Story',
-			paragraph:
-				'StarBourn Studios Is A Media Company That\nOffers 360-Degree Media Solutions\nWe Produce Content For TV Shows, Films,\nDigital And Offer Unique Brand Solutions',
-			image: '2',
-			align: 'left',
-		},
-		{
-			title: 'Development & Production',
-			paragraph:
-				'TV Formats\nFactual/ Non-Scripted\nFeature Films\nShort Films\nDocumentary\nDigital - OTT',
-			image: '3',
-			align: 'right',
-		},
-		{
-			title: 'Discover Us',
-			paragraph:
-				'Content Creation\nVideo Production\nPost Production\nCommercial\nCorporate\nPrint & Digital',
-			image: '4',
-			align: 'left',
-		},
-		{
-			title: 'Imagine Beyond',
-			paragraph:
-				'Creative - Ideation & Planning\nContent Production & Creation\nDistribution & Marketing',
-			image: '5',
-			align: 'right',
-		},
-		{
-			title: 'Branding',
-			paragraph:
-				'We Provide Entertainment Marketing\nServices To Forward Thinking Brands',
-			image: '8',
-			align: 'left',
-		},
-	];
-
-	let scrolling = false;
-	let y;
-	let menu;
-
-	$: scrolling = y >= 50;
-	$: menu = Math.floor(y / window.innerHeight);
+	let scrollY;
 </script>
 
-<svelte:window bind:scrollY={y} />
+<svelte:window bind:scrollY />
 
 <main>
 	<Header
-		bind:scrolling
-		bind:menu
+		bind:scrollY
 		menus={[
-			'Home',
-			'',
-			...sections.map((section) => section.title),
-			'Get in Touch',
+			'home',
+			'storylab',
+			'story',
+			'development',
+			'discover',
+			'beyond',
+			'branding',
+			'contacts',
 		]}
 	/>
 
-	<div
-		id="Home"
-		class="window cover home"
-		style="background-image: url(assets/compressed/1.jpg);"
-	>
-		<h1 class="title">
-			We bring ideas to life!<br />Stories to entertain<br />the audience
-			around the world
-		</h1>
-
-		<h4>
-			"Storytelling is the most powerful way to put ideas into the world
-			today." --Robert McKee
-		</h4>
-	</div>
-
-	<iframe
-		id="Starbourn"
-		class="window"
-		src="https://www.youtube.com/embed/F5UPc8dya-M?controls=0"
-		title="YouTube video player"
-		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-		allowfullscreen
-	/>
-	{#each sections as section}
-		<div
-			id={section.title}
-			class="window cover section"
-			style="background-image: url(assets/compressed/{section.image}.jpg);"
-		>
-			<div>
-				<h1>{section.title}</h1>
-				<p>{section.paragraph}</p>
-			</div>
-		</div>
-	{/each}
-
-	<div id="Get in Touch" class="window cover contacts">
-		<div class="t">
-			<h1>Get in Touch</h1>
-			<p>Let the magic begin</p>
-		</div>
-		<Contact />
-	</div>
-
-	<footer>
-		<p>Copyright @2021 The Story Lab, a dentsu company</p>
-		<div>
-			<a>Privacy policy</a> |
-			<a>Terms & conditions</a> |
-			<a>Cookies</a> |
-			<a>Contact us</a> |
-			<a>About us</a> |
-			<a>Sitemap</a> |
-		</div>
-	</footer>
+	<Home />
+	<Storylab />
+	<Story />
+	<Development />
+	<Discover />
+	<Beyond />
+	<Branding />
+	<Contacts />
+	<Footer />
 </main>
-
-<style>
-	footer {
-		background-color: #222222;
-		height: 80px;
-		padding: 20px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		align-items: flex-start;
-	}
-	.t {
-		display: grid;
-		place-items: center;
-	}
-	.contacts {
-		background-image: url('../assets/images/7.jpg');
-
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-evenly;
-	}
-
-	.home {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-around;
-		background-color: white;
-	}
-	.left {
-		justify-content: flex-start;
-	}
-
-	.right {
-		justify-content: flex-end;
-	}
-
-	.section {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		box-sizing: border-box;
-		padding: 0 200px;
-	}
-
-	@media screen and (max-width: 800px) {
-		.section {
-			padding: unset;
-			padding-bottom: 50px;
-
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-end;
-			align-items: center;
-		}
-	}
-</style>

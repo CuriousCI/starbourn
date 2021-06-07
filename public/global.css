@@ -9,6 +9,8 @@ html, body {
 body { 
 	color: white;
 	background-color: black; 
+
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
 
 * {
@@ -20,43 +22,34 @@ body {
 	position: relative;
 	width: 100%;
 	height: 100vh;
-	
-	box-sizing: border-box;
-	padding-top: 100px;
 
-	scroll-snap-align: start;
-}
-
-h1,
-p {
-	white-space: pre-line;
-	/* width: max-content; */
-}
-
-.window h1 {
-	font-size: 9vw;
-	font-weight: normal;
-}
-
-.window p {
-	font-size: 2.1vw;
-}
-
-
-.cover {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	
+	scroll-snap-align: start;
 }
 
-@media screen and (max-width: 480px) {
-	.window h1 { font-size: 12vw; }
-	.window p { font-size: 4vw; }
-}
+h1, p {  font-weight: normal; }
 
+.window h1 { font-size: 48px; }
+.window p { font-size: 16px; }
 
 .pointer { cursor: pointer; }
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: black; }
 ::-webkit-scrollbar-thumb { background: whitesmoke; }
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+	.window h1 { font-size: 80px; }
+	.window p { font-size: 24px; }
+}
+
+@media (min-width: 1200px) {
+	.window h1 { font-size: 100px; }
+}
