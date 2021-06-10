@@ -7,7 +7,7 @@
 
 <header class:invert={scrolling}>
     <h1>STARBOURN STUDIOS</h1>
-    <nav>
+    <nav role="navigation">
         {#each menus as section}
             <a
                 class:selected={menu == section}

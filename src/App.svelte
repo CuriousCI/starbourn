@@ -10,7 +10,7 @@
 	import Footer from './Footer.svelte';
 	import Contacts from './sections/Contacts.svelte';
 
-	let scrollY;
+	let scrollY = 0;
 </script>
 
 <svelte:window bind:scrollY />
