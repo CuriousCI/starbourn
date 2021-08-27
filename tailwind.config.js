@@ -3,8 +3,12 @@ module.exports = {
     './**/*.svelte',
     './**/*.html'
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
+    fontFamily: {
+      sans: ['HelveticaNeue-Light', 'sans-serif'],
+      serif: ['HelveticaNeue-Light', 'serif']
+    },
     extend: {},
   },
   variants: {

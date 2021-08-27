@@ -5,12 +5,19 @@
     $: menu = menus[Math.floor(scrollY / window.innerHeight)];
 </script>
 
-<header class:invert={scrolling}>
-    <h1>STARBOURN STUDIOS</h1>
-    <nav role="navigation">
+<header
+    class:invert={scrolling}
+    class="hidden md:visible w-screen h-24 md:grid md:grid-cols-3 z-10 fixed items-center px-10"
+>
+    <h1 class="col-span-1">STARBOURN STUDIOS</h1>
+    <nav
+        class="col-span-2 flex items-center justify-evenly box-border"
+        role="navigation"
+    >
         {#each menus as section}
             <a
-                class:selected={menu == section}
+                class:border-b-2={menu == section}
+                class="font-semibold"
                 href="#{section}"
                 on:click={() => (menu = section)}
             >
@@ -21,52 +28,8 @@
 </header>
 
 <style>
-    header {
-        position: fixed;
-        z-index: 1;
-
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        align-items: center;
-
-        width: 100%;
-        height: 100px;
-
-        box-sizing: border-box;
-        padding: 0 20px;
-    }
-
-    @media screen and (max-width: 992px) {
-        header {
-            display: none;
-        }
-    }
-
-    nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-
-        box-sizing: border-box;
-    }
-
     .invert {
         background-color: white;
         color: black;
-    }
-
-    .selected {
-        border-bottom: 2px solid;
-        border-color: inherit;
-    }
-
-    a {
-        height: 100%;
-
-        color: inherit;
-        text-decoration: unset;
-
-        font-weight: bolder;
-        font-size: 1.2vw;
     }
 </style>
