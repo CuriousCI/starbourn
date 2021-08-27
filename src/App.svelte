@@ -26,7 +26,7 @@
 		]}
 	/>
 
-	<Home />
+	<Home id="home" />
 	<Storylab />
 	<Section class="left" title="Our Story" id="story" img="2">
 		StarBourn Studios Is A Media Company That<br />
@@ -67,3 +67,9 @@
 	<Contacts />
 	<Footer />
 </main>
+
+<style global type="text/postcss">
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+</style>

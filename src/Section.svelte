@@ -3,7 +3,7 @@
 	id={$$props.id}
 	style="background-image: url('../assets/compressed/{$$props.img}.jpg');"
 >
-	<section class={$$props.class}>
+	<section class="{$$props.class} w-screen h-4">
 		<div>
 			<h1>{@html $$props.title}</h1>
 			<p><slot /></p>
@@ -34,7 +34,7 @@
 	}
 
 	section {
-		width: 100%;
+		/* width: 100%; */
 		height: 40vh;
 
 		display: grid;

@@ -1,10 +1,11 @@
-<div id="home" class="window">
-    <h1>
+<!-- <div id={$$props.id} class="window"> -->
+<div id={$$props.id} class="window grid grid-rows-3 items-center">
+    <h1 class="row-span-2">
         We bring ideas to life!<br />
         Stories to entertain the<br />
         audience around the world
     </h1>
-    <p>
+    <p class="row-span-1 self-start">
         "Storytelling is the most powerful way to put<br />
         ideas into the world today." --Robert McKee
     </p>
@@ -14,9 +15,9 @@
     .window {
         background-image: url('../assets/compressed/1.jpg');
 
-        display: grid;
+        /* display: grid;
         grid-template-rows: 8.5fr 1fr;
-        place-items: center;
+        place-items: center; */
     }
 
     h1 {
@@ -25,7 +26,6 @@
 
     p {
         font-size: 15px;
-        align-self: flex-start;
     }
 
     @media (min-width: 992px) {
