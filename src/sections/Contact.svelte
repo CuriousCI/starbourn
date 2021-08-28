@@ -25,48 +25,27 @@
 	}
 </script>
 
-<form on:submit|preventDefault={handleSubmit}>
+<form
+	on:submit|preventDefault={handleSubmit}
+	class="w-1/3 h-2/3 flex flex-col items-center gap-1 text-black"
+>
 	<input type="text" placeholder="Name" bind:value={name} />
 	<input type="text" placeholder="Phone Number" bind:value={number} />
-	<input type="mail" placeholder="Email" bind:value={email} />
+	<input type="email" placeholder="Email" bind:value={email} />
 	<textarea
 		placeholder="Type your message here"
 		cols="30"
 		rows="10"
 		bind:value={message}
 	/>
-	<input type="submit" />
+	<input type="submit" class="self-end" />
 </form>
 
 <style>
-	form {
-		padding: 20px;
-		display: flex;
-		flex-direction: column;
-		gap: 5px;
-		align-items: center;
-		width: clamp(300px, 40%, 1000px);
-		height: 30vh;
-		background-color: #ededed;
-		border-radius: 4px;
-	}
-
-	input[type='submit'] {
-		background-image: linear-gradient(to right, #5d526e, #5ebbe6);
-	}
-
-	input {
-		height: 30px;
-	}
-
-	input,
+	input[type='text'],
+	input[type='email'],
 	textarea {
 		padding: 5px;
 		width: 100%;
-		justify-content: center;
-		resize: none;
-
-		border-radius: 5px;
-		border: 1px solid #dedede;
 	}
 </style>
